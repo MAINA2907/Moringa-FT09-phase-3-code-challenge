@@ -31,7 +31,7 @@ class Article:
         sql = "INSERT INTO articles(title,content,author_id,magazine_id)VALUES(?,?,?,?)"
         cursor.execute(sql, (self.title, self.content, self.author_id, self.magazine_id))
         conn.commit()
-        self.id = CURSOR2.lastrowid
+        self.id = cursor.lastrowid
 
     @classmethod
     def create(cls, title, content, author_id, magazine_id):
